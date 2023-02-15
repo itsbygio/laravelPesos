@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' =>'Lorem',
             'apellido' =>'Ipsum',
-            'n_id' =>'122322',
+            'rol' =>'publico',
+            'identificacion' =>'122322',
             'contacto' =>'3212312321',
             'email' =>'test@test.com',
             'password' => Hash::make('miguel12345'),
@@ -30,7 +31,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' =>'Ricardo',
             'apellido' =>'Hernandez',
-            'n_id' =>'122322',
+            'rol' =>'administrador',
+            'identificacion' =>'122322',
             'contacto' =>'3212312321',
             'email' =>'Ricardo@test.com',
             'password' => Hash::make('administrador12345'),
@@ -40,7 +42,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' =>'Julio',
             'apellido' =>'Lesas',
-            'n_id' =>'3453212',
+            'rol' =>'administrador',
+            'identificacion' =>'3453212',
             'contacto' =>'2123221',
             'email' =>'hernandez@test.com',
             'password' => Hash::make('administrador12345'),
@@ -50,7 +53,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' =>'Alejandro',
             'apellido' =>'Perez',
-            'n_id' =>'12212243',
+            'rol' =>'administrador',
+            'identificacion' =>'12212243',
             'contacto' =>'654321',
             'email' =>'Perez@test.com',
             'password' => Hash::make('administrador12345'),
@@ -60,7 +64,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' =>'Rodolfo',
             'apellido' =>'gutierrez',
-            'n_id' =>'223212',
+            'rol' =>'administrador',
+            'identificacion' =>'223212',
             'contacto' =>'12421246',
             'email' =>'gutierrez@test.com',
             'password' => Hash::make('administrador12345'),

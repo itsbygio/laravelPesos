@@ -117,20 +117,23 @@
         axios.get(`productos/${id}/edit`).then((response) => {
             producto = response.data.producto;
             galeria = response.data.galeria;
-            categoria = response.data.categoria;
+            categoria = response.data?.categoria;
             console.log(producto.ext);
             $('#FormEdit input#titulo').val(producto.titulo)
             $('#FormEdit input#precio').val(producto.precio)
             $('#FormEdit input#sku').val(producto.sku)
             $('#FormEdit input#sku').val(producto.sku)
-            document.querySelector(`#FormEdit select[name='id_categoria'] option[value='${categoria.id}']`).setAttribute("selected", "")
+            if(categoria!=null){
+                document.querySelector(`#FormEdit select[name='id_categoria'] option[value='${categoria.id}']`).setAttribute("selected", "")
+
+            }
             $('.richText-editor').html(producto.descripcion)
             $("#FormEdit textarea#descripcion").val(producto.descripcion);
             mockFile = {
                 name: id + producto.ext,
                 size: producto.size_image
             };
-            if (producto.ext != "") {
+            if (producto.ext != null && producto.ext != "" ) {
                 // dropzoneUploadEdit.removeAllFiles();
                 dropzoneUploadEdit.emit("addedfile", mockFile);
                 dropzoneUploadEdit.emit("thumbnail", mockFile, "/storage/productos/" + id + producto.ext);

@@ -1,8 +1,10 @@
             <!-- app-Header -->
-            <div class="app-header header sticky">
-                <div class="container-fluid main-container">
-                    <div class="d-flex">
-                        <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
+            <div class=" header sticky">
+
+                <div class="container main-container">
+
+                    <div class="d-flex justify-content-center">
+                        <!-- <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a> -->
                         <!-- sidebar-toggle-->
                         <a class="logo-horizontal " href="index.html">
                             <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
@@ -11,8 +13,8 @@
                         </a>
                         <!-- LOGO -->
                         <div class="main-header-center ms-3 d-none d-lg-block">
-                            <!-- <input type="text" class="form-control" id="typehead" placeholder="Search for results..."> -->
-                            <!-- <button class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button> -->
+                            <input  wire:model="keyWord" type="text" class="form-control" id="typehead" placeholder="Buscar Producto"> 
+                           <button class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button> 
                         </div>
                         <div class="d-flex order-lg-2 ms-auto header-right-icons">
                             <!-- SEARCH -->
@@ -177,7 +179,7 @@
                                             </a>
                                         </div>
                                         <!-- FULL-SCREEN -->
-                                        <div class="dropdown  d-flex notifications">
+                                        <!-- <div class="dropdown  d-flex notifications">
                                             <a class="nav-link icon" data-bs-toggle="dropdown"><i
                                                     class="fe fe-bell"></i><span class=" pulse"></span>
                                             </a>
@@ -234,7 +236,7 @@
                                                     class="dropdown-item text-center p-3 text-muted">View all
                                                     Notification</a>
                                                  </div>
-                                        </div>
+                                        </div> -->
                                         <!-- NOTIFICATIONS -->
                                         <!-- <div class="dropdown  d-flex message">
                                             <a class="nav-link icon text-center" data-bs-toggle="dropdown">
@@ -337,10 +339,10 @@
                                         </div> -->
                                         <!-- SIDE-MENU -->
                                         <div class="dropdown d-flex profile-1">
-                                            <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
+                                            <!-- <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
                                                 <img src="../assets/images/users/21.jpg" alt="profile-user"
                                                     class="avatar  profile-user brround cover-image">
-                                            </a>
+                                            </a> -->
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading">
                                                     <div class="text-center">

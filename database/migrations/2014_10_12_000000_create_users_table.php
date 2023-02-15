@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->nullable();
             $table->string('apellido')->nullable();
-            $table->string('tipo_id')->nullable();
-            $table->string('n_id')->nullable();
+            $table->string('rol')->nullable();
+            $table->string('identificacion')->nullable();
+            $table->string('tipo_identidad')->nullable();
             $table->string('contacto')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
