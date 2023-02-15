@@ -1,7 +1,7 @@
 <script>
     let id_producto = '';
     const dropzoneUpload = new Dropzone('#FileInput', {
-        url: "/gallery/SaveProduct",
+        url: "../administrar/gallery/SaveProduct",
         autoProcessQueue: false,
         dictDefaultMessage: 'Sube aquí tu imagen',
         acceptedFiles: ".png,.jpg,.jpeg,.webp",
