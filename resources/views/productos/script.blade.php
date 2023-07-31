@@ -113,12 +113,14 @@
         $('#error_titulo').html("");
         $('#error_precio').html("");
         $('#error_sku').html("");
+        $('#error_stock').html("");
     }
 
     function validationErrors(error) {
         (typeof error.response.data.titulo != 'undefined') ? $('#FormCrear  span#error_titulo').html(error.response.data.titulo[0]): $('#FormCrear span#error_titulo').html("");
         (typeof error.response.data.precio != 'undefined') ? $('#FormCrear  span#error_precio').html(error.response.data.precio[0]): $('#FormCrear  span#error_precio').html("");
         (typeof error.response.data.sku != 'undefined') ? $('#FormCrear  span#error_sku').html(error.response.data.sku[0]): $('#FormCrear  span#error_sku').html("");
+        (typeof error.response.data.stock != 'undefined') ? $('#FormCrear  span#error_stock').html(error.response.data.stock[0]): $('#FormCrear  span#error_stock').html("");
     }
 
     function CleanInputsFile(){
@@ -136,5 +138,43 @@
             }
             FilesInput.classList.remove('dz-started');
         }
+    }
+
+    async function GuardarUsuario() {
+
+
+axios.post('/administrar/usuarios/store', $('#FormCrearuser').serialize()).then((response) => {
+    
+    validationSuccess();
+    window.livewire.emit('render');
+    swal("Felicidades!", "usuario agregado exitosamentes", "success")
+    document.getElementById('FormCrearuser').reset();
+    $('.richText-editor').html("");
+    CleanInputsFile();
+}).catch((error) => {
+
+    validationErrors(error);
+});
+}
+function validationSuccess() {
+        $('#error_nombre').html("");
+        $('#error_apelllido').html("");
+        $('#error_rol').html("");
+        $('#error_password').html("");
+        $('#error_tipo_identificacion').html("");
+        $('#error_identificacion').html("");
+        $('#error_contacto').html("");
+        $('#error_email').html("");
+    }
+
+    function validationErrors(error) {
+        (typeof error.response.data.titulo != 'undefined') ? $('#FormCrearuser  span#error_nombre').html(error.response.data.titulo[0]): $('#FormCrearuser span#error_nombre').html("");
+        (typeof error.response.data.precio != 'undefined') ? $('#FormCrearuser  span#error_apelllido').html(error.response.data.precio[0]): $('#FormCrearuser  span#error_apelllido').html("");
+        (typeof error.response.data.sku != 'undefined') ? $('#FormCrearuser  span#error_rol').html(error.response.data.sku[0]): $('#FormCrearuser  span#error_rol').html("");
+        (typeof error.response.data.stock != 'undefined') ? $('#FormCrearuser  span#error_password').html(error.response.data.stock[0]): $('#FormCrear  span#error_password').html("");
+        (typeof error.response.data.stock != 'undefined') ? $('#FormCrearuser  span#error_tipo_identificacion').html(error.response.data.stock[0]): $('#FormCrear  span#error_tipo_identificacion').html("");
+        (typeof error.response.data.stock != 'undefined') ? $('#FormCrearuser  span#error_identificacion').html(error.response.data.stock[0]): $('#FormCrear  span#error_identificacion').html("");
+        (typeof error.response.data.stock != 'undefined') ? $('#FormCrearuser  span#error_contacto').html(error.response.data.stock[0]): $('#FormCrear  span#error_contacto').html("");
+        (typeof error.response.data.stock != 'undefined') ? $('#FormCrearuser  span#error_email').html(error.response.data.stock[0]): $('#FormCrear  span#error_email').html("");
     }
 </script>

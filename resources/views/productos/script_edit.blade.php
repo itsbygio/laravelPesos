@@ -122,7 +122,7 @@
             $('#FormEdit input#titulo').val(producto.titulo)
             $('#FormEdit input#precio').val(producto.precio)
             $('#FormEdit input#sku').val(producto.sku)
-            $('#FormEdit input#sku').val(producto.sku)
+            $('#FormEdit input#stock').val(producto.sku)
             if(categoria!=null){
                 document.querySelector(`#FormEdit select[name='id_categoria'] option[value='${categoria.id}']`).setAttribute("selected", "")
 

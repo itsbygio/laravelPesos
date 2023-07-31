@@ -22,7 +22,19 @@
                });
 
        }
+      function DropUserSystem(){ 
+        axios.delete("" + "/" + id)
+               .then((result) => {
+                   swal("Removido!", "Sus registro han sido removido exitosamente", "success");
+                   $('#delete_modal').modal('hide');
 
+                   window.livewire.emit('render');
+
+               }).catch((err) => {
+                   console.log("error");
+
+               });
+       }
        function MultipleDestroy(url) {
 
            for (i = 0; i < Arrayids.length; i++) {
@@ -58,8 +70,17 @@
        window.livewire.on('store', () => {
            swal("Guardado!", "Sus registro han sido guardado exitosamente", "success")
        });
+       window.livewire.on('storeventa', () => {
+           swal("Guardado!", "Sus Venta han sido guardada exitosamente", "success")
+       });
        window.livewire.on('update', () => {
            swal("Actualizado!", "Sus registros han sido actualizado exitosamente", "success")
+       });
+       window.livewire.on('updateImage', () => {
+           swal("Actualizado!", "Su imagen ha sido actualizada exitosamente", "success")
+       });
+       window.livewire.on('updatePassword', () => {
+           swal("Actualizado!", "Su Contraseña ha sido actualizada exitosamente", "success")
        });
        window.livewire.on('delete', () => {
            swal("Removido!", "Su registro se ha  removido exitosamente", "success")
@@ -71,6 +92,9 @@
            $('#MultipleDeleteModal').modal('hide');
 
        });
+       window.livewire.on('errorVenta', () => {
+           swal("Error!", "No hay sufucientes productos disponibles", "error")
+       });
        Livewire.on('VisibilityMultipleButtonTrash', status => {
            if (status) {
                $('#btn-trash').show();
@@ -80,4 +104,5 @@
 
            }
        })
+       
    </script>

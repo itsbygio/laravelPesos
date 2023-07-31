@@ -6,8 +6,8 @@
                         <!-- sidebar-toggle-->
                         <a class="logo-horizontal " href="index.html">
                             <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="/assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
-                                alt="logo">
+                            <img src="/assets/images/brand/sercolf.png" class="header-brand-img light-logo1"
+                            style="max-width: 120px;"  alt="logo">
                         </a>
                         <!-- LOGO -->
                         <div class="main-header-center ms-3 d-none d-lg-block">
@@ -53,7 +53,7 @@
                                             </a>
                                         </div> -->
                                         <!-- Theme-Layout -->
-                                         <div class="dropdown  d-flex shopping-cart">
+                                         <!-- <div class="dropdown  d-flex shopping-cart">
                                             <a class="nav-link icon text-center" data-bs-toggle="dropdown">
                                                 <i class="fe fe-shopping-cart"></i><span class="badge bg-secondary header-badge">4</span>
                                             </a>
@@ -169,7 +169,7 @@
                                                     <span class="float-end p-2 fs-17 fw-semibold">Total: $6789</span>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div>  -->
                                         <!-- CART -->
                                         <div class="dropdown d-flex">
                                             <a class="nav-link icon full-screen-link nav-link-bg">
@@ -177,7 +177,7 @@
                                             </a>
                                         </div>
                                         <!-- FULL-SCREEN -->
-                                        <div class="dropdown  d-flex notifications">
+                                        <!-- <div class="dropdown  d-flex notifications">
                                             <a class="nav-link icon" data-bs-toggle="dropdown"><i
                                                     class="fe fe-bell"></i><span class=" pulse"></span>
                                             </a>
@@ -187,8 +187,8 @@
                                                         <h6 class="mt-1 mb-0 fs-16 fw-semibold text-dark">Notifications
                                                         </h6>
                                                     </div>
-                                                </div>
-                                                <div class="notifications-menu">
+                                                </div> -->
+                                                <!-- <div class="notifications-menu">
                                                     <a class="dropdown-item d-flex" href="notify-list.html">
                                                         <div class="me-3 notifyimg  bg-primary brround box-shadow-primary">
                                                             <i class="fe fe-mail"></i>
@@ -228,13 +228,13 @@
                                                             <span class="notification-subtext">1 day ago</span>
                                                         </div>
                                                     </a>
-                                                </div>
-                                                <div class="dropdown-divider m-0"></div>
+                                                </div> -->
+                                                <!-- <div class="dropdown-divider m-0"></div>
                                                 <a href="notify-list.html"
                                                     class="dropdown-item text-center p-3 text-muted">View all
                                                     Notification</a>
                                                  </div>
-                                        </div>
+                                        </div> -->
                                         <!-- NOTIFICATIONS -->
                                         <!-- <div class="dropdown  d-flex message">
                                             <a class="nav-link icon text-center" data-bs-toggle="dropdown">
@@ -338,30 +338,23 @@
                                         <!-- SIDE-MENU -->
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                                <img src="../assets/images/users/21.jpg" alt="profile-user"
+                                                <img src="../assets/images/users/user.png" alt="profile-user"
                                                     class="avatar  profile-user brround cover-image">
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading">
                                                     <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">Percy Kewshun</h5>
+                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold"> {{ auth()->user()->email }}</h5>
                                                         <small class="text-muted">Senior Admin</small>
                                                     </div>
                                                 </div>
                                                 <div class="dropdown-divider m-0"></div>
-                                                <a class="dropdown-item" href="profile.html">
-                                                    <i class="dropdown-icon fe fe-user"></i> Profile
-                                                </a>
-                                                <a class="dropdown-item" href="email-inbox.html">
-                                                    <i class="dropdown-icon fe fe-mail"></i> Inbox
-                                                    <span class="badge bg-danger rounded-pill float-end">5</span>
-                                                </a>
-                                                <a class="dropdown-item" href="lockscreen.html">
-                                                    <i class="dropdown-icon fe fe-lock"></i> Lockscreen
-                                                </a>
-                                                <a class="dropdown-item" href="login.html">
+                                                
+                                                <!-- <a class="dropdown-item" href="login.html">
                                                     <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
-                                                </a>
+                                                </a> -->
+                                                @livewire('menu.logout')
+
                                             </div>
                                         </div>
                                     </div>

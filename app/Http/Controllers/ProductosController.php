@@ -17,6 +17,7 @@ class ProductosController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth');
     }
     public function index()
     {
@@ -50,7 +51,7 @@ class ProductosController extends Controller
 
 
         $validator = Validator::make($request->all(), [
-            'titulo' => 'required',
+            'titulo' => ['required','unique:productos'],
             'precio' => 'numeric',
             'sku' => ['alpha_num', 'unique:productos'],
 
@@ -66,10 +67,11 @@ class ProductosController extends Controller
             [
                 'titulo' => $request->titulo,
                 'precio' => $request->precio,
-                'descripcion' => $request->descripcion,
+                'stock' => $request->stock,
                 'id_categoria' => $request->id_categoria,
                 'sku' => $request->sku,
-                'ext' => ''
+                'uri_producto'=>str_replace(' ', '-',$request->titulo),
+                'ext' => NULL
             ]
         );
 
@@ -94,7 +96,7 @@ class ProductosController extends Controller
         return [
             'categoria' => $producto->categoria,
             'producto' => $producto,
-            'galeria' => Gallery::where('id_producto', $id)->get()
+           
         ];
     }
 
@@ -108,9 +110,10 @@ class ProductosController extends Controller
     public function update(Request $request, Categoria $categoria)
     {
         $validator = Validator::make($request->all(), [
-            'titulo' => 'required',
+            'titulo' => ['required',Rule::unique('productos')->ignore($request->titulo,'titulo')],
             'precio' => 'numeric',
-            'sku' => ['alpha_num', Rule::unique('productos')->ignore($request->id,'id')],
+            'sku' => ['alpha_num', Rule::unique('productos')->ignore($request->sku,'sku')],
+            'stock' => 'numeric',
 
 
         ]);
@@ -118,8 +121,13 @@ class ProductosController extends Controller
         if ($validator->fails()) {
             return response($validator->errors(), 400);
         }
+            
+        //Producto::where('id', $request->id)->update($request->all());
+        $producto = Producto::findOrfail($request->id);
+        $producto->uri_producto= str_replace(' ', '-',$request->titulo);
 
-        Producto::where('id', $request->id)->update($request->all());
+        $producto->update($request->all());
+
     }
 
     /**

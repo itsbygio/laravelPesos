@@ -22,9 +22,8 @@ return new class extends Migration
             ->onDelete('set null')
             ->onUpdate('cascade');
             $table->string('titulo')->nullable();
-            $table->text('descripcion')->nullable();
+            $table->string('stock')->nullable();
             $table->string('precio')->nullable();
-            $table->string('ext')->nullable();
             $table->string('size_image')->nullable();
             $table->timestamps();
 

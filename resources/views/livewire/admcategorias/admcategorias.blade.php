@@ -1,13 +1,13 @@
 <div>
     <div class="page-header">
         <h1 class="page-title">Administrar Categorias</h1>
-        <div>
+        <!-- <div>
             <ol class="breadcrumb">
 
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Dashboard 01</li>
             </ol>
-        </div>
+        </div> -->
     </div>
     <div class="card">
     @include('livewire.admcategorias.modals')
@@ -15,8 +15,8 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-xl-2">
-                    <div class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#createDataModal">
-                        <i class="fa fa-plus"></i> Categorias
+                    <div class="btn  btn-dark" data-bs-toggle="modal" data-bs-target="#createDataModal">
+                        <i class="fa fa-plus"></i> Generar Categorias
                     </div>
                 </div>
 
@@ -28,6 +28,7 @@
 
                     Mostrar
                     <select wire:model.defer="npagination" name="npagination" id="npagination" wire:change="change">
+                        <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -37,7 +38,7 @@
 
                 </div>
                 <div class="col-xl-6">
-                    <input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Buscar Producto"><br>
+                    <input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Buscar Categoria"><br>
                 </div>
                 <div class="col-xl-2" style="text-align:right">
                     <button style ="display:none" id="btn-trash"  data-bs-target="#MultipleDeleteModal" data-bs-toggle="modal" type="button" data-bs-whatever="@mdo" class="btn btn-outline-default"><i class="fe fe-trash"></i></button>
@@ -74,7 +75,8 @@
                             <td>{{$categoria->created_at}}</td>
                             <td>{{$categoria->updated_at}}</td>
 
-                            <td><button data-bs-toggle="modal" data-bs-target="#updateDataModal"  class='btn  btn-success btn-sm' wire:click.prevent="edit('{{$categoria->id}}')"><i class='fe fe-edit fs-14'></i></button>&nbsp&nbsp&nbsp&nbsp<button type="button" data-bs-toggle="modal" wire:click="ChangeId('{{$categoria->id}}')" data-bs-target="#DeleteModal" class='btn btn-primary btn-sm drop-btn ml-2 '><i class='fe fe-trash-2 fs-14'></i></button></td>
+                            <td><button data-bs-toggle="modal" data-bs-target="#updateDataModal"  class='btn  btn-success btn-sm' wire:click.prevent="edit('{{$categoria->id}}')"><i class='fe fe-edit fs-14'></i></button>&nbsp&nbsp&nbsp&nbsp
+                                <button type="button" data-bs-toggle="modal" wire:click="ChangeId('{{$categoria->id}}')" data-bs-target="#DeleteModal" class='btn btn-primary btn-sm drop-btn ml-2 '><i class='fe fe-trash-2 fs-14'></i></button></td>
 
                         </tr>
                         @endforeach

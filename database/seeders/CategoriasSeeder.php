@@ -16,24 +16,65 @@ class CategoriasSeeder extends Seeder
     public function run()
     {
         DB::table('categorias')->insert([
-            'titulo' =>'camisas',
+            'titulo' =>'Extintores',
             'created_at' =>date('Y-m-d H:i:s'),
             'updated_at' =>date('Y-m-d H:i:s'),  
         ]); 
         DB::table('categorias')->insert([
-            'titulo' =>'calzado',
+            'titulo' =>'Soportes',
             'created_at' =>date('Y-m-d H:i:s'),
             'updated_at' =>date('Y-m-d H:i:s'),  
         ]); 
         DB::table('categorias')->insert([
-            'titulo' =>'accesorios',
+            'titulo' =>'Botiquines',
             'created_at' =>date('Y-m-d H:i:s'),
             'updated_at' =>date('Y-m-d H:i:s'),  
         ]); 
         DB::table('categorias')->insert([
-            'titulo' =>'pantalones',
+            'titulo' =>'Conos',
             'created_at' =>date('Y-m-d H:i:s'),
             'updated_at' =>date('Y-m-d H:i:s'),  
         ]); 
+        DB::table('categorias')->insert([
+            'titulo' =>'Camillas/inmovilizadores',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]); 
+        DB::table('categorias')->insert([
+            'titulo' =>'Palas',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]); 
+        DB::table('categorias')->insert([
+            'titulo' =>'Paletas',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]); 
+        DB::table('categorias')->insert([
+            'titulo' =>'Chalecos',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]); 
+        DB::table('categorias')->insert([
+            'titulo' =>'Punto ecologico',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]); 
+        DB::table('categorias')->insert([
+            'titulo' =>'Señalizaciones reglamentarias',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]);
+        DB::table('categorias')->insert([
+            'titulo' =>'Kit de derrame',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]);  
+        DB::table('categorias')->insert([
+            'titulo' =>'Señalizacion reglamentaria 30x15',
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
+        ]); 
+        
     }
 }

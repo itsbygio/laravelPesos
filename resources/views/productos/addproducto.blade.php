@@ -17,7 +17,10 @@
                             <h6 class="modal-title mb-3 mt-2 ">Titulo del producto:</h6>
                             <input id="titulo" name="titulo" class="form-control  mb-3" type="text">
                             <span id="error_titulo"  class="mb-3 text-red"></span>
-                            <h6 class="modal-title mb-3 mt-2 ">Añade la foto principal del producto:</h6>
+                            <h6 class="modal-title mb-3 mt-2 ">Productos en Stock</h6>
+                                <input id="stock" name="stock" class="form-control  mb-3" type="text">
+                                <span id="error_stock"  class="mb-3 text-red"></span>
+                            <h6 class="modal-title mb-3 mt-2 ">Imagen del producto:</h6>
                             <div id="FileInput" class="dropzone mb-3">
                             </div>
                             <span id="error_fp" class="mb-3 text-red"></span>
@@ -39,17 +42,12 @@
                                 </select>
                                 <span id="error_categoria" class="mb-3 text-red"></span>
 
-                                <h6 class="modal-title mb-3 mt-2">Galeria del producto:</h6>
-                                <div id="FilesInput" class="dropzone">
-                                </div>
-                                <span id="error_gallery"  class="mb-3 text-red"></span>
+                                
+                                
 
                         </div>
                     </div>
-                    <div class="row">
-                        <h6 class="modal-title mb-3 mt-2">Descripcion del producto:</h6>
-                        <input type="text" class="content" id="descripcion" name="descripcion">
-                    </div>
+                   
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Cerrar</button>

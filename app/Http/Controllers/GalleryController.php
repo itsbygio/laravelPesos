@@ -18,23 +18,6 @@ class GalleryController extends Controller
     public function SaveProducts(Request $request)
     {
 
-
-        $archivo = $request->file('file');
-        $ext = '.' . $archivo->extension();
-        $id_producto = $request->id_producto;
-        $gallery = Gallery::create(
-            [
-                'id_producto' =>  $id_producto,
-                'ext' => $ext,
-                'size_image' => $archivo->getSize()
-
-            ]
-        );
-        $archivo->move(public_path('storage/productos/' . $id_producto), $gallery->id . $ext);
-        return response([
-        'gallery' =>   $gallery,
-        'galleryxid'=> Gallery::where('id_producto',$request->id_producto)->get()
-        ]);
     }
 
     public function SaveProduct(Request $request)

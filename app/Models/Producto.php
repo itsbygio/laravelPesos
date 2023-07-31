@@ -16,15 +16,19 @@ class Producto extends Model
         'sku',
         'id_categoria',
         'titulo',
-        'descripcion',
+        'stock',
         'referencias',
         'precio',
         'ext',
         'size_image',
+        'uri_producto',
         'created_at',
         'updated_at',
     ];
     public function categoria(){
         return $this->belongsTo('App\Models\Categoria','id_categoria','id');
     }
+   
+    
+    
 }

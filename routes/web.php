@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('livewire.catalogo.index');
+    return view('auth.login');
 });
 
 Route::middleware([
@@ -26,20 +26,30 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-Route::resource('usuarios', App\Http\Controllers\UserController::class)
-->middleware('auth:sanctum');
-Route::get('/administrar/categorias', App\Http\Livewire\Admcategorias\Admcategorias::class)->middleware('auth');
-//Route::resource('/administrador/categorias', App\Http\Controllers\CategoriaController::class)->middleware('auth:sanctum');
-//Route::get('administrador/getcategorias', [App\Http\Controllers\CategoriaController::class, 'getCategorias'])->middleware('auth:sanctum');
-/*Productos */
 
-Route::resource('/administrar/productos', App\Http\Controllers\ProductosController::class)->middleware('auth:sanctum');
-Route::post('administrar/productos/store', [App\Http\Controllers\ProductosController::class, 'store'])->middleware('auth:sanctum');
+
+Route::get('/producto/{titulo}', [App\Http\Controllers\productid::class,'index']);
+Route::get('/producto', function () {
+    return redirect('/');
+});
+Route::get('/productos', function () {
+    return redirect('/');
+});
+Route::get('/register', function () {
+    return redirect('/');
+});
+Route::get('/{categoria}', [App\Http\Controllers\CategoriaController::class,'ListProducts']);
+Route::get('/administrar/categorias', App\Http\Livewire\Admcategorias\Admcategorias::class)->middleware('auth');
+Route::get('/administrar/usuarios', App\Http\Livewire\Admusuarios\Admusuarios::class)->middleware('auth');
+Route::get('/administrar/productos', App\Http\Livewire\Admproductos\Admproductos::class)->middleware('auth');
+Route::get('/administrar/ventas', App\Http\Livewire\Admventas\Admventas::class)->middleware('auth');
+Route::get('/add/ventas', App\Http\Livewire\Addventas\Addventas::class)->middleware('auth');
+Route::get('/factura',[App\Http\Controllers\VentasController::class, 'generateBill'])->middleware('auth');
+
+
+
 Route::post('administrar/gallery/SaveProducts', [App\Http\Controllers\GalleryController::class, 'SaveProducts'])->middleware('auth:sanctum');
 Route::post('administrar/gallery/SaveProduct', [App\Http\Controllers\GalleryController::class, 'SaveProduct'])->middleware('auth:sanctum');
 Route::post('administrar/gallery/UpdateImagesGallery', [App\Http\Controllers\GalleryController::class, 'UpdateImagesGallery'])->middleware('auth:sanctum');
 
-/*Fin productos */
-
-//Route::get('/productos', App\Http\Livewire\Productostable::class)->name('productos')->middleware('auth:sanctum');
 

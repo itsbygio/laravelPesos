@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -10,13 +15,13 @@ class UserController extends Controller
     
     public function __construct()
     {
-
+        $this->middleware('auth');
     }
 
 
     public function index()
     {
-        return view('usuarios.index');
+       
     }
 
     /**
@@ -26,7 +31,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -37,7 +42,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**
@@ -59,7 +64,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -71,7 +76,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      
     }
 
     /**
@@ -82,6 +87,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      
     }
 }

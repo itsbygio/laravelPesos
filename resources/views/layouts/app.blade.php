@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link rel="icon" href="../assets/images/brand/logosercolf.ico">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -564,7 +564,7 @@
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
                 <div class="col-md-12 col-sm-12 text-center">
-                    Copyright © <span id="year"></span> <a href="javascript:void(0)">Sash</a>. Designed with <span class="fa fa-heart text-danger"></span> by <a href="javascript:void(0)"> Spruko </a> All rights reserved.
+                    Copyright © <span id="year"></span> <a href="javascript:void(0)">Sercolf</a>  All rights reserved.
                 </div>
             </div>
         </div>
@@ -574,7 +574,7 @@
     </div>
 
     @livewireScripts
-    
+    @include('layouts.shop_script')
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     

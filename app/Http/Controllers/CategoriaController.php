@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\Producto;
+
 use Illuminate\Support\Facades\Validator;
 
 class CategoriaController extends Controller
@@ -99,6 +101,23 @@ class CategoriaController extends Controller
 
          return  $categoria->update($request->all());
 
+    }
+    public function ShowProducts($categoria){
+
+        $categorias= Categoria::all();
+        $category =  Categoria::where('titulo',$categoria)->firstOrFail();
+        $productos = Producto::where('id_categoria', $category->id)->get();
+        return $productos;
+    }
+    public function ListProducts(request $request){
+            return view('livewire.Catalogo.lcategorias');
+        // $categorias= Categoria::all();
+        // $category =  Categoria::where('titulo',$categoria)->firstOrFail();
+        // $productos = Producto::where('id_categoria', $category->id)->get();
+        // return view('categorias.CategoryList',[
+        //     'productos'=> $productos,
+        //     'categorias'=>  $categorias
+        // ]);   
     }
 
     /**
